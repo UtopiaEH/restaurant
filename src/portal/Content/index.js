@@ -3,11 +3,10 @@ import { StyledContent } from "./StyledContent";
 
 import ItemContent from "../../common/components/ItemContent";
 
-
 function PortalContent() {
   return (
     <StyledContent>
-     <ItemContent />
+      <ItemContent/>
     </StyledContent>
   )
 }

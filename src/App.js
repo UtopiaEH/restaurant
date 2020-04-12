@@ -1,17 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Layout } from 'antd';
+import { FOOTER_TEXT, LOGO_TEXT } from "./common/constants";
+import PortalContent from "./portal/Content";
+import PortalFooter from "./portal/Footer";
+import PortalHeader from "./portal/Header";
+import PortalSider from "./portal/Sider";
+
+import "antd/dist/antd.css";
+
+const { Content } = Layout;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-      </header>
-    </div>
+    <Layout>
+      <PortalHeader logoText={ LOGO_TEXT }/>
+      <Content style={ { padding: '0 50px', margin: '16px 0' } }>
+        <Layout style={ { padding: '24px 0', backgroundColor: "#fff" } }>
+          <PortalSider/>
+          <PortalContent />
+        </Layout>
+      </Content>
+      <PortalFooter footerText={ FOOTER_TEXT }/>
+    </Layout>
   );
 }
 

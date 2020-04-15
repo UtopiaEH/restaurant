@@ -5,7 +5,7 @@ export const axiosInstance = axios.create({
   method: 'GET',
 
   headers: {
-    "Accept": "application/json",
-    "user-key": "a17a8079cad3599ac7c970039e2c09ec"
+    'Accept': 'application/json',
+    'User-Key': 'a17a8079cad3599ac7c970039e2c09ec'
   },
 })

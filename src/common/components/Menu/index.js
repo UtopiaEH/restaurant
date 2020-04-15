@@ -1,6 +1,7 @@
 import React from "react";
 import { Menu } from "antd";
 import { LaptopOutlined, NotificationOutlined, UserOutlined } from "@ant-design/icons";
+import ModalWindow from "../ModalWindow";
 
 const { SubMenu } = Menu
 
@@ -16,9 +17,9 @@ function MenuNav() {
         key="sub1"
         title={
           <span>
-                  <UserOutlined/>
-                  subnav 1
-                </span>
+           <UserOutlined/>
+            subnav 1
+           </span>
         }
       >
         <Menu.Item key="1">option1</Menu.Item>
@@ -54,6 +55,7 @@ function MenuNav() {
         <Menu.Item key="11">option11</Menu.Item>
         <Menu.Item key="12">option12</Menu.Item>
       </SubMenu>
+      <ModalWindow/>
     </Menu>
   )
 }

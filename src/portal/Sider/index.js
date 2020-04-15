@@ -7,9 +7,9 @@ const { Sider } = Layout;
 
 function PortalSider() {
 
-  useEffect(() => {
-    getCategories()
-  })
+  // useEffect(() => {
+  //   getCategories()
+  // },[])
 
   return (
     <Sider className="site-layout-background" width={ 200 }>

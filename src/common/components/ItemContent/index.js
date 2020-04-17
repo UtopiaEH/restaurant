@@ -1,54 +1,35 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { List, Card } from 'antd';
+import noImage from '../../../assets/images/no-image.png'
 
-function ItemContent() {
-
-  const data = [
-    {
-      title: 'Title 1',
-    },
-    {
-      title: 'Title 2',
-    },
-    {
-      title: 'Title 3',
-    },
-    {
-      title: 'Title 4',
-    },
-    {
-      title: 'Title 5',
-    },
-    {
-      title: 'Title 6',
-    },
-    {
-      title: 'Title 6',
-    },
-    {
-      title: 'Title 6',
-    },
-
-  ];
+function ItemContent({ searchResult }) {
+  const { Meta } = Card;
 
   return (
-    <List
-      grid={ {
-        gutter: 16,
-        xs: 1,
-        sm: 2,
-        md: 3,
-        lg: 3,
-        xl: 3,
-        xxl: 2,
-      } }
-      dataSource={ data }
-      renderItem={ item => (
-        <List.Item>
-          <Card title={ item.title }>Card content</Card>
-        </List.Item>
-      ) }
-    />
+    <>
+      <List
+        grid={ {
+          gutter: 16, column: 4,
+        } }
+        dataSource={ searchResult }
+        renderItem={ ({ restaurant: { name, thumb, cuisines, id } }) => {
+          return (
+            <List.Item>
+              <Link to={ `/restaurant:${ id }` }>
+                <Card
+                  hoverable
+                  style={ { width: 240 } }
+                  cover={ <img alt="example" src={ thumb ? thumb : noImage }/> }
+                >
+                  <Meta title={ name } description={ cuisines }/>
+                </Card>
+              </Link>
+            </List.Item>
+          )
+        } }
+      />
+    </>
   )
 }
 

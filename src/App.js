@@ -1,10 +1,7 @@
 import React from 'react';
 import { Layout } from 'antd';
 import { FOOTER_TEXT, LOGO_TEXT } from "./common/constants";
-import PortalContent from "./portal/Content";
-import PortalFooter from "./portal/Footer";
-import PortalHeader from "./portal/Header";
-import PortalSider from "./portal/Sider";
+import { PortalHeader, PortalSider, PortalContent, PortalFooter } from "./portal";
 
 import "antd/dist/antd.css";
 
@@ -17,7 +14,7 @@ function App() {
       <Content style={ { padding: '0 50px', margin: '16px 0' } }>
         <Layout style={ { padding: '24px 0', backgroundColor: "#fff" } }>
           <PortalSider/>
-          <PortalContent />
+          <PortalContent/>
         </Layout>
       </Content>
       <PortalFooter footerText={ FOOTER_TEXT }/>

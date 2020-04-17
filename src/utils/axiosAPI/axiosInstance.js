@@ -6,6 +6,7 @@ export const axiosInstance = axios.create({
 
   headers: {
     'Accept': 'application/json',
+    // 'User-Key': 'a17a8079cad3599ac7c970039e2c09ec'
     'User-Key': 'a17a8079cad3599ac7c970039e2c09ec'
   },
 })

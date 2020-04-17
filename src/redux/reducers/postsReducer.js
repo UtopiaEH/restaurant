@@ -1,5 +1,5 @@
 import { EMPTY_ARRAY } from "../../common/constants";
-import { FETCH_POSTS } from "../types";
+import { FETCH_POSTS, IS_LOADING } from "../types";
 
 const initialState = {
   posts: EMPTY_ARRAY,
@@ -12,6 +12,11 @@ const postsReducer = (state = initialState, action) => {
       return {
         ...state,
         posts: action.payload.posts
+      }
+    case IS_LOADING:
+      return {
+        ...state,
+        isLoading: action.payload.loading
       }
     default:
       return state
